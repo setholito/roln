@@ -1,0 +1,48 @@
+
+.listView h3 {
+  display: inline-block;
+  margin-top: 0;
+}
+
+.logo {
+  margin: 20px 0;
+}
+
+.listsForm, .loginForm {
+  padding: 30px 0;
+}
+
+.update-task, .update-list {
+  margin-right: 10px;
+  background-image: url('../images/update.svg');
+}
+
+.update, .delete {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.update, .delete {
+  opacity: 1;
+}
+
+.delete-list, .delete-task,
+.update-task, .update-list {
+  opacity: 0.15;
+  transition: opacity .25s;
+}
+
+.delete-list:hover, .delete-task:hover,
+.update-task:hover, .update-list:hover {
+  opacity: 1;
+}
+
+.delete-list {
+  background-image: url('../images/delete-list.svg');
+}
+
+.delete-task {
+  background-image: url('../images/delete-task.svg');
+}
