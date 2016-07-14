@@ -1,3 +1,14 @@
+a {
+  color: #ff2800;
+}
+
+a:hover {
+  color: #e52200;
+}
+
+header {
+  padding: 40px 0;
+}
 
 .listView h3 {
   display: inline-block;
@@ -20,6 +31,7 @@
 }
 
 .logo {
+  display: inline-block;
   margin: 20px 0;
 }
 
@@ -30,7 +42,7 @@
 .label-roln {
   display: inline-block;
   padding: 10px 15px;
-  margin: 15px 0;
+  margin: 0 0 15px 0;
   font-size: 14px;
 }
 
@@ -67,4 +79,25 @@
 
 .delete-task {
   background-image: url('../images/delete-task.svg');
+}
+
+.login-panel {
+  
+}
+
+.login-panel h2 {
+  padding: 0;
+  margin: 0 0 15px 0;
+}
+
+.full-width-bg {
+  position: absolute;
+  top: -200%;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  /*background: -webkit-linear-gradient(top left, #ffffff 85%, #ff2800 100%);*/
+  /*background: -o-linear-gradient(bottom right, #ffffff 85%, #ff2800 100%);*/
+  /*background: -moz-linear-gradient(bottom right, #ffffff 85%, #ff2800 100%);*/
+  /*background: linear-gradient(bottom right, #ffffff 85%, #ff2800 100%);*/
 }

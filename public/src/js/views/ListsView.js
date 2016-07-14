@@ -6,17 +6,14 @@ var ListsView = Backbone.View.extend({
 
   el : '<div class="col-xs-12">\
           <div class="row">\
-            <div class="col-xs-12 col-md-4">\
-              <img class="logo" width="150" src="src/images/roln-logo.svg" alt="">\
-            </div>\
-            <div class="col-xs-12 col-md-4">\
+            <div class="col-xs-12 col-md-6 col-md-offset-3">\
               <div class="listsForm">\
                 <form>\
-                  <label>New List</label><br>\
+                  <label>Add a New List</label><br>\
                   <div class="input-group">\
-                    <input class="form-control" type="text"/>\
+                    <input class="form-control input-lg" type="text"/>\
                     <span class="input-group-btn">\
-                      <button class="btn btn-default red" type="button">Add</button>\
+                      <button class="btn btn-default btn-lg red" type="button">Add</button>\
                     </span>\
                   </div>\
                 </form>\
