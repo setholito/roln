@@ -16,7 +16,7 @@ router.get('/', function(req, res, next) {
   }
 });
 
-router.get('/login', function(req, res, next){
+router.get('/login', function(req, res, next) {
   if(req.isAuthenticated()) {
     res.redirect('/');
   } else {
@@ -24,8 +24,12 @@ router.get('/login', function(req, res, next){
   }
 });
 
-router.post('/login', passport.authenticate('local'), function(req, res){
-  res.redirect('/');
+// Middleware is called such because it sits in the "middle" of the route and the callback
+// In this case, `passport.authenticate('local')` is our middleware
+router.post('/login', passport.authenticate('local'), function(req, res) {
+  // If this function gets called, authentication was successful.
+  // `req.user` contains the authenticated user.
+  res.redirect('/'); //can only navigate to '/' if
 });
 
 router.get('/register', function(req, res, next) {

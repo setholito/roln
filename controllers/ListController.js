@@ -15,7 +15,7 @@ module.exports = {
   * ListController.list()
   */
   list: function (req, res) {
-    ListModel.find(function (err, lists) {
+    ListModel.find({ user: req.user._id }, function (err, lists) {
       if (err) {
         return res.json(500, {
           message: 'Error getting list.'
@@ -42,7 +42,7 @@ module.exports = {
   */
   show: function (req, res) {
     var id = req.params.id;
-    ListModel.findOne({_id: id}, function (err, list) {
+    ListModel.findOne({_id: id, user: req.user._id}, function (err, list) {
       if (err) {
         return res.json(500, {
           message: 'Error getting list.'
@@ -69,7 +69,8 @@ module.exports = {
   */
   create: function (req, res) {
     var list = new ListModel({
-			name : req.body.name
+			name : req.body.name,
+      user: req.user._id
     });
     
     list.save(function (err, list) {

@@ -10,8 +10,8 @@ var users = require('./routes/users');
 var session = require('express-session');
 var MongoStore = require('connect-mongo')(session);
 var passport = require('./config/passport');
-
 var middleware = require('./routes/middleware');
+
 
 // USER DEFINED ROUTES ======
 
@@ -28,14 +28,6 @@ mongoose.connect('mongodb://localhost/roln');
 
 var app = express();
 
-app.use(session({
-  secret: 'foo',
-  store: new MongoStore({ mongooseConnection: mongoose.connection })
-}));
-
-app.use(passport.initialize());
-app.use(passport.session());
-
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -48,18 +40,27 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-// DEFINED BY EXPRESS ======
+// SESSION BIZ ======
 
-app.use('/', middleware.auth, routes);
+app.use(session({
+  secret: 'foo',
+  store: new MongoStore({ mongooseConnection: mongoose.connection })
+}));
+
+app.use(passport.initialize());
+app.use(passport.session());
+
+// ROUTES ======
+
+app.use('/', routes);
 app.use('/users', middleware.auth, users);
-
-// USER DEFINED ======
-
 app.use('/lists', middleware.auth, lists);
 app.use('/tasks', middleware.auth, tasks);
 app.use('/tags', middleware.auth, tags);
 
+// 404 ======
 // catch 404 and forward to error handler
+
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
   err.status = 404;

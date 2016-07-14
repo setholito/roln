@@ -16,7 +16,7 @@ var ListsView = Backbone.View.extend({
                   <div class="input-group">\
                     <input class="form-control" type="text"/>\
                     <span class="input-group-btn">\
-                      <button class="btn btn-default" type="button">Add</button>\
+                      <button class="btn btn-default red" type="button">Add</button>\
                     </span>\
                   </div>\
                 </form>\
