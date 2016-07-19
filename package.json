@@ -22,8 +22,10 @@
     "express-session": "^1.14.0",
     "gulp": "^3.9.1",
     "jquery": "^3.0.0",
+    "mongoose": "^4.5.2",
     "mongoose-reverse-populate": "^1.1.0",
     "morgan": "~1.6.1",
+    "nodemon": "^1.9.2",
     "passport": "^0.3.2",
     "passport-local": "^1.0.0",
     "serve-favicon": "~2.3.0",
@@ -34,8 +36,6 @@
   "devDependencies": {
     "bootstrap": "^3.3.6",
     "express-mongoose-generator": "github:mistakevin/express-mongoose-generator",
-    "jquery": "^3.1.0",
-    "mongoose": "^4.5.2",
-    "nodemon": "^1.9.2"
+    "jquery": "^3.1.0"
   }
 }
