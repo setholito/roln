@@ -22,7 +22,7 @@ var tags = require('./routes/tags');
 // MONGO / MONGOOSE ======
 
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/roln');
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/roln');
 
 // INSTANTIATE EXPRESS ======
 
