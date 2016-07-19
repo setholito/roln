@@ -53,16 +53,18 @@ var ListView = Backbone.View.extend({
   handleFormSubmit: function(e){
     e.preventDefault();
     var taskTitle = this.$('.formContainer input[type="text"]').val();
-    var taskModel = new TaskModel({list: this.model.get('_id'), title: taskTitle});
 
-    var _this = this;
+    if (taskTitle !== "" && taskTitle[0] !== " ") {
+      var taskModel = new TaskModel({list: this.model.get('_id'), title: taskTitle});
+      var _this = this;
 
-    taskModel.save(null, {
-      success: function() {
-        _this.model.get('tasks').add(taskModel);
-        this.$('.formContainer input[type="text"]').val('');
-      }
-    });
+      taskModel.save(null, {
+        success: function() {
+          _this.model.get('tasks').add(taskModel);
+          this.$('.formContainer input[type="text"]').val('');
+        }
+      });
+    }
 
   },
 

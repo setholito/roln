@@ -13,7 +13,7 @@ var ListsView = Backbone.View.extend({
                   <div class="input-group">\
                     <input class="form-control input-lg" type="text"/>\
                     <span class="input-group-btn">\
-                      <button class="btn btn-default btn-lg red" type="button">Add</button>\
+                      <button class="btn btn-default btn-lg red" type="submit">Add</button>\
                     </span>\
                   </div>\
                 </form>\
@@ -50,16 +50,19 @@ var ListsView = Backbone.View.extend({
   handleFormSubmit: function(e){
     e.preventDefault();
     var listTitle = this.$('.listsForm input[type="text"]').val();
-    var listModel = new ListModel({name: listTitle});
 
-    var _this = this;
+    if (listTitle !== "" && listTitle[0] !== " ") {
 
-    listModel.save(null, {
-      success: function(){
-        _this.collection.add(listModel);
-        _this.$('.listsForm input[type="text"]').val('');
-      }
-    });
+      var listModel = new ListModel({name: listTitle});
+      var _this = this;
+
+      listModel.save(null, {
+        success: function(){
+          _this.collection.add(listModel);
+          _this.$('.listsForm input[type="text"]').val('');
+        }
+      });
+    }
 
   }
 
