@@ -8,4 +8,4 @@ Features include:
 *  Basic CRUD operations for lists and tasks
 *  Mobile friendliness  
 
-[http://roln.herokuapp.com](Click here to visit)
+[Click here to visit.](http://roln.herokuapp.com)
