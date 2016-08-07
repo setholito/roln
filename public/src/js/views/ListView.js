@@ -5,7 +5,9 @@ var TasksView = require('./TasksView');
 
 var ListView = Backbone.View.extend({
   
-  el: '<div class="listView"></div>',
+  el: '<div></div>',
+
+  className: 'listView',
 
   initialize: function(){
     this.listenTo(this.model, 'change', this.render);
@@ -22,9 +24,7 @@ var ListView = Backbone.View.extend({
     <div class="col-xs-12 col-md-4">\
       <div class="panel panel-default tasksContainer">\
         <div class="panel-body">\
-          <h3 class="list-title"><%= model.get("name") %></h3>\
-          <span class="delete delete-list pull-right"></span>\
-          <span class="update update-list pull-right"></span>\
+          <h3 class="list-title"><%= model.get("name") %><span class="delete delete-list pull-right"></span><span class="update update-list pull-right"></span></h3>\
           <div class="formContainer">\
             <form>\
               <label>New Task</label>\
@@ -41,12 +41,16 @@ var ListView = Backbone.View.extend({
     </div>\
   '),
 
+  // <% if (this.collection.indexOf(this.model) % 3 === 0) { %>\
+  //   <div class="clearfix"></div>\
+  // <% } %>\
+
   render: function(){
     this.$el.html(this.template({model: this.model}));
     var tasksView = new TasksView({collection: this.model.get('tasks') });
 
     this.$el.find('.tasksContainer').append(tasksView.render().el);
-    
+
     return this;
   },
 
@@ -65,7 +69,6 @@ var ListView = Backbone.View.extend({
         }
       });
     }
-
   },
 
   editListTitle: function(e) {

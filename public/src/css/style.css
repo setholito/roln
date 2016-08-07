@@ -10,8 +10,7 @@ header {
   padding: 40px 0;
 }
 
-.listView h3 {
-  display: inline-block;
+h3.list-title {
   margin-top: 0;
 }
 
@@ -83,7 +82,7 @@ header {
 }
 
 .search-bg {
-  padding: 5em 0;
+  padding: 3em 0;
   margin-bottom: 25px;
   background-color: #333333;
 }
