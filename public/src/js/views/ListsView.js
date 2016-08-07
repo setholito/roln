@@ -4,25 +4,32 @@ var ListModel = require('../models/ListModel');
 
 var ListsView = Backbone.View.extend({
 
-  el : '<div class="col-xs-12">\
-          <div class="row">\
-            <div class="col-xs-12 col-md-6 col-md-offset-3">\
-              <div class="listsForm">\
-                <form>\
-                  <label>Add a New List</label><br>\
-                  <div class="input-group">\
-                    <input class="form-control input-lg" type="text"/>\
-                    <span class="input-group-btn">\
-                      <button class="btn btn-default btn-lg red" type="submit">Add</button>\
-                    </span>\
-                  </div>\
-                </form>\
+  el : '<div class="listsViewContainer">\
+          <div class="container-fluid">\
+            <div class="row search-bg">\
+              <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">\
+                <div class="listsForm">\
+                  <form>\
+                    <label class="form-list-label">Add a New List</label><br>\
+                    <div class="input-group">\
+                      <input class="form-control input-lg" type="text"/>\
+                      <span class="input-group-btn">\
+                        <button class="btn btn-default btn-lg red" type="submit">Add</button>\
+                      </span>\
+                    </div>\
+                  </form>\
+                </div>\
               </div>\
             </div>\
           </div>\
-          <hr>\
-          <div class="row">\
-            <div class="listsView"></div>\
+          <div class="container">\
+            <div class="row">\
+              <div class="col-xs-12">\
+                <div class="row">\
+                  <div class="listsView"></div>\
+                </div>\
+              </div>\
+            </div>\
           </div>\
         </div>',
 

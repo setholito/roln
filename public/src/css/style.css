@@ -15,10 +15,6 @@ header {
   margin-top: 0;
 }
 
-.btn-roln {
-
-}
-
 .red {
   color: white;
   background-color: #ff2800;
@@ -32,7 +28,7 @@ header {
 
 .logo {
   display: inline-block;
-  margin: 20px 0;
+  margin: 15px 0;
 }
 
 .listsForm, .loginForm {
@@ -81,23 +77,25 @@ header {
   background-image: url('../images/delete-task.svg');
 }
 
-.login-panel {
-  
-}
-
 .login-panel h2 {
   padding: 0;
   margin: 0 0 15px 0;
 }
 
+.search-bg {
+  padding: 5em 0;
+  margin-bottom: 25px;
+  background-color: #333333;
+}
+
 .full-width-bg {
   position: absolute;
-  top: -200%;
+  top: 0;
   left: 0;
   bottom: 0;
   right: 0;
-  /*background: -webkit-linear-gradient(top left, #ffffff 85%, #ff2800 100%);*/
-  /*background: -o-linear-gradient(bottom right, #ffffff 85%, #ff2800 100%);*/
-  /*background: -moz-linear-gradient(bottom right, #ffffff 85%, #ff2800 100%);*/
-  /*background: linear-gradient(bottom right, #ffffff 85%, #ff2800 100%);*/
+}
+
+.form-list-label {
+  color: #fff;
 }
