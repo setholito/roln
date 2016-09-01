@@ -5,9 +5,9 @@ var TasksView = require('./TasksView');
 
 var ListView = Backbone.View.extend({
   
-  el: '<div></div>',
+  tagName: 'div',
 
-  className: 'listView',
+  className: 'col-xs-12 col-md-4 listView',
 
   initialize: function(){
     this.listenTo(this.model, 'change', this.render);
@@ -21,29 +21,23 @@ var ListView = Backbone.View.extend({
   },
 
   template: _.template('\
-    <div class="col-xs-12 col-md-4">\
-      <div class="panel panel-default tasksContainer">\
-        <div class="panel-body">\
-          <h3 class="list-title"><%= model.get("name") %><span class="delete delete-list pull-right"></span><span class="update update-list pull-right"></span></h3>\
-          <div class="formContainer">\
-            <form>\
-              <label>New Task</label>\
-              <div class="input-group">\
-                <input class="form-control" type="text"/>\
-                <span class="input-group-btn">\
-                  <button class="btn btn-default red" type="submit">Add</button>\
-                </span>\
-              </div>\
-            </form>\
-          </div>\
+    <div class="panel panel-default tasksContainer">\
+      <div class="panel-body">\
+        <h3 class="list-title"><%= model.get("name") %><span class="delete delete-list pull-right"></span><span class="update update-list pull-right"></span></h3>\
+        <div class="formContainer">\
+          <form>\
+            <label>New Task</label>\
+            <div class="input-group">\
+              <input class="form-control" type="text"/>\
+              <span class="input-group-btn">\
+                <button class="btn btn-default red" type="submit">Add</button>\
+              </span>\
+            </div>\
+          </form>\
         </div>\
       </div>\
     </div>\
   '),
-
-  // <% if (this.collection.indexOf(this.model) % 3 === 0) { %>\
-  //   <div class="clearfix"></div>\
-  // <% } %>\
 
   render: function(){
     this.$el.html(this.template({model: this.model}));
@@ -55,7 +49,9 @@ var ListView = Backbone.View.extend({
   },
 
   handleFormSubmit: function(e){
+
     e.preventDefault();
+    
     var taskTitle = this.$('.formContainer input[type="text"]').val();
 
     if (taskTitle !== "" && taskTitle[0] !== " ") {

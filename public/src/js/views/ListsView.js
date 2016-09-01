@@ -51,6 +51,8 @@ var ListsView = Backbone.View.extend({
       _this.$('.listsView').append(listView.render().el);
     });
 
+    this.checkColumns();
+
     return this;
   },
 
@@ -71,6 +73,20 @@ var ListsView = Backbone.View.extend({
       });
     }
 
+  },
+
+  checkColumns: function(){
+    var listsViewChildren = $('.listsView').children('.listView');
+    var clearfix = '<div class="clearfix"></div>';
+
+    $.each(listsViewChildren, function(idx){
+      // Momentarily bump by one
+      var z = idx + 1;
+      // If divisible by 3, insert clearfix
+      if (z % 3 === 0) {
+        $(clearfix).insertAfter(listsViewChildren[idx]);
+      }
+    });
   }
 
 });
