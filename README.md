@@ -6,6 +6,6 @@ Features include:
 
 *  Login and logout via Passport  
 *  Basic CRUD operations for lists and tasks
-*  Mobile friendliness  
+*  Mobile-friendly
 
 [Click here to visit.](http://roln.herokuapp.com)
